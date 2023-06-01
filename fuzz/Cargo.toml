@@ -1,0 +1,19 @@
+[package]
+name = "crossterm-fuzz"
+version = "0.0.0"
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+crossterm = { path = ".." }
+libfuzzer-sys = { version = "0.4", features = ["arbitrary-derive"] }
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "parse_ansi"
+path = "fuzz_targets/parse_ansi.rs"

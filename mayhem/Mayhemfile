@@ -1,0 +1,5 @@
+project: crossterm
+target: parse_ansi
+
+cmds:
+  - cmd: /parse_ansi
